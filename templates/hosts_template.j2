@@ -1,0 +1,12 @@
+{%- for hostname, host_data in hosts.items() %}
+{{ hostname }}:
+  hostname: {{ host_data.hostname }}
+  groups:
+    - {{ host_data.groups[0] }}
+    - {{ host_data.groups[1] }}
+  data:
+    mgmt_ip: {{ host_data.data.mgmt_ip }}
+    vendor: {{ host_data.data.vendor }}
+    device_type: {{ host_data.data.device_type }}
+    site_code: {{ host_data.data.site_code }}
+{%- endfor %}
